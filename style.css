@@ -1,3 +1,25 @@
+/*
+font-family: 'Metal Mania', cursive;
+font-family: 'Rosarivo', serif;
+*/
+*{
+    font-family: "Rosarivo";
+    /*background-color: darkred;*/
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    /*background-color: darkred;*/
+}
+
+
+
+
+h1{
+    font-family: "Metal Mania";
+}
+
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -6,4 +28,9 @@ table {
 td, th {
     border: 1px solid black;
     padding: 5px 10px;
+}
+
+#mainHeader{
+    text-align: center;
+    font-size: 10em;
 }
