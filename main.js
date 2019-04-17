@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 
 // change table to divs
@@ -35,6 +35,14 @@ function updateCoffees(e) {
 
 function coffeeSearch (e){
     var coffeeInput = searchCoffees.value;
+    var filteredCoffees = [];
+    var searchCoffeeString = "";
+    coffees.forEach(function(coffee) {
+        if (coffee.name.includes(coffeeInput)) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
 
 }
 
@@ -64,6 +72,8 @@ var roastSelection = document.querySelector('#roast-selection');
 var searchCoffees = document.querySelector("#coffeeSearch");
 
 tbody.innerHTML = renderCoffees(coffees);
+tbody.innerHTML = coffeeSearch(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
-searchCoffees.addEventListener("keyup",function);
+searchCoffees.addEventListener("keyup",coffeeSearch);
+
