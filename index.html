@@ -85,7 +85,7 @@
         jurtles vogsphere finger ravenous leapt kria galaxy given inconveniences traal. <br> Lost bindlewurdles straight gross under buried morning hub some along lost
         mistake worst poem planet fact bugblatter aside moderately making freddled
         squealer. Jurpling megabrantis Vogon correct smashing slurping nobbling primeval
-        first megabrantis mid were grunthos galactic Vogons</p></div>
+        first megabrantis mid were grunthos galactic Vogons.<br><br> <small><b>111 East 1st Avenue, Sudan, Texas</b></small></p></div>
 </footer>
 </div>
 
@@ -104,80 +104,40 @@
 <script src="js/keys.js"></script>
 <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
-<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox-geocoder.js"></script>
 <script>
+
+    var accessToken = mapboxKey;
+
     mapboxgl.accessToken = mapboxKey;
+
     var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/dark-v10",
-        center: [10, 10],
-        zoom: 10
+        center: [-102.5214991, 34.05],
+        zoom: 12
     });
 
-    var objArr = [
-        {
-            name: "Fujiya",
-            address: "9030 Wurzbach Rd, San Antonio, TX 78240",
-            about: "Japanese Steakhouse"
-        },
-        {
-            name: "Taqueria Jalisco",
-            address: "151 Moursund Blvd, San Antonio, TX 78221",
-            about: "Mexican Restaraunt"
-        },
-        {
-            name: "Pizza Italia",
-            address: "3023 Thousand Oaks #101, San Antonio, TX 78247",
-            about: "Italian eatery and bar"
-        }
-    ];
+    var cafeInfo = {
+        address: "East 1st Avenue, Sudan, TX 70937",
+        popupHTML: "<p><b>Heavy Metal Coffee</b></p> <img src='img/deathwish_logo_svg.svg' style=\"height: 25px width: 25px\">"
+    };
 
-    function geoChanger(name, address, zoom, about) {
-        if (zoom === null || isNaN(zoom)) {
-            zoom = map.getZoom();
-        }
-        return geocode(address, mapboxKey).then(function (result) {
-            mapChange(result, zoom, name, about);
-            //console.log(result);
-
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
         });
     }
 
-    function mapChange(coords, zoom, name, about) {
-        //map.setStyle("mapbox://styles/johnd894/cjujx7a7p0zka1ftisf77fsey");
-
-        if (zoom === null || isNaN(zoom)) {
-            zoom = map.getZoom();
-        }
-        map.setZoom(zoom);
-        map.setCenter(coords);
-        console.log("changed?8***********");
-
-        var locPopup = new mapboxgl.Popup()
-            .setHTML(about);
+    placeMarkerAndPopup(cafeInfo, accessToken, map);
 
 
-        var marker = new mapboxgl.Marker()
-            .setLngLat(coords)
-            .addTo(map)
-            .setPopup(locPopup);
-
-    }
-
-    function mapProcess(item, inx, arr) {
-        var name = item.name;
-        var address = item.address;
-        var about = item.about;
-
-        geoChanger(name, address, 17, about);
-
-
-    }
-
-    //objArr.forEach(mapProcess);
-
-
-    //geoChanger("9030 Wurzbach Rd, San Antonio, TX 78240", 17);
 
 
 
