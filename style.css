@@ -10,15 +10,29 @@ font-family: 'Rosarivo', serif;
 }
 
 body{
-    /*background-color: darkred;*/
+    background-color: darkred;
 }
 
+#map {
+    /* the width and height may be set to any size */
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    padding-left: 15px;
 
+}
 form {
     width: 100%;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center
+
 }
 
-
+footer{
+    padding: 25px;
+}
 
 
 
@@ -39,4 +53,22 @@ td, th {
 #mainHeader{
     text-align: center;
     font-size: 10em;
+}
+
+.foot-one{
+    float: left;
+}
+
+.foot-two{
+    float: right;
+    width: 50%;
+
+}
+.coffeeSearchinput{
+    width: 75%;
+}
+
+.roast-control-text{
+    height:50px;
+    width: 75%;
 }
