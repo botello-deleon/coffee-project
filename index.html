@@ -15,38 +15,35 @@
 <hr>
 <div class="container">
     <div class="row">
-        <div class="col-6" style="background-color: royalblue">
-            <form>
-                <!--<label for="roast-selection"></label>-->
-                <!--<select id="roast-selection">-->
-                <!--<option>light</option>-->
-                <!--<option>medium</option>-->
-                <!--<option>dark</option>-->
-                <!--</select>-->
-
+        <div class="col-6" id="input-container" style="background-color: white">
+            <form class="border" style="border-color: black; border-style: solid">
                 <div class="coffee">
-                    <label for="roast-selection">Roast select</label>
+                    <label for="roast-selection"><h4>Roast select</h4></label>
                     <select class="roast-control" id="roast-selection">
                         <option>all</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
-
                     </select>
                 </div>
 
 
                 <div class="coffee">
-                    <label for="coffeeSearch">Search coffees</label>
-                    <textarea class="roast-control" id="coffeeSearch" rows="3"></textarea>
+                    <label for="coffeeSearch" style="width: 75%"><h4>Search coffees</h4></label>
+                    <textarea class="roast-control" style="height:50px; width: 75%" id="coffeeSearch" rows="3"></textarea>
                 </div>
-                <input id="submit" type="submit"/>
+                <input id="submit" type="submit" style="height:25px; width: 75%"/>
             </form>
+            <br>
+            <br>
+            <br>
+            <img src="img/metalcoffeemug.jpg" height="300px" width="300px">
+
         </div>
 
 
         <div class="col-6">
-            <table>
+            <table class="w-100">
                 <thead>
                 <!-- <tr>
                     <th>ID</th>
@@ -54,7 +51,7 @@
                     <th>ROAST</th>
                 </tr> -->
                 </thead>
-                <tbody id="coffees"></tbody>
+                <tbody id="coffees" class="text-center"></tbody>
             </table>
         </div>
     </div>
