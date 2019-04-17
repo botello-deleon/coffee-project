@@ -77,4 +77,5 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 searchCoffees.addEventListener("keyup",coffeeSearch);
+roastSelection.addEventListener("mouseleave", updateCoffees);
 
